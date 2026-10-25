@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neighborhood Safety Information Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">
+            <h2>🛡️ SafeNeighbor</h2>
+        </div>
+        <nav>
+            <a href="#alerts">Alerts</a>
+            <a href="#report">Report Incident</a>
+            <a href="#contacts">Emergency Contacts</a>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+        
+        <!-- Welcome Hero Section -->
+        <section class="hero">
+            <h1>Community Safety Information Board</h1>
+            <p>Stay informed, stay safe, and report safety updates in your local area.</p>
+        </section>
+
+        <!-- Emergency Contacts Section -->
+        <section id="contacts" class="card-section">
+            <h2>🚨 Emergency Contacts</h2>
+            <div class="contact-grid">
+                <div class="contact-card emergency">
+                    <h3>Police Helpline</h3>
+                    <p class="phone-number">112 / 100</p>
+                </div>
+                <div class="contact-card fire">
+                    <h3>Fire Station</h3>
+                    <p class="phone-number">101</p>
+                </div>
+                <div class="contact-card ambulance">
+                    <h3>Ambulance</h3>
+                    <p class="phone-number">102</p>
+                </div>
+                <div class="contact-card helpline">
+                    <h3>Women Helpline</h3>
+                    <p class="phone-number">1091</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Report Form Section -->
+        <section id="report" class="card-section">
+            <h2>📢 Report a Safety Incident / Alert</h2>
+            <form id="incidentForm">
+                <div class="form-group">
+                    <label for="title">Incident Title:</label>
+                    <input type="text" id="title" placeholder="e.g., Streetlight out on Main St" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category:</label>
+                    <select id="category" required>
+                        <option value="Security Alert">Security Alert</option>
+                        <option value="Infrastructure Issue">Infrastructure Issue</option>
+                        <option value="Suspicious Activity">Suspicious Activity</option>
+                        <option value="General Advice">General Advice</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Details / Description:</label>
+                    <textarea id="description" rows="3" placeholder="Describe the situation..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn">Submit Alert</button>
+            </form>
+        </section>
+
+        <!-- Active Safety Alerts Board -->
+        <section id="alerts" class="card-section">
+            <h2>📋 Live Safety Bulletin Board</h2>
+            
+            <div class="filter-box">
+                <label for="filterCategory">Filter by Category:</label>
+                <select id="filterCategory" onchange="filterAlerts()">
+                    <option value="All">All Categories</option>
+                    <option value="Security Alert">Security Alert</option>
+                    <option value="Infrastructure Issue">Infrastructure Issue</option>
+                    <option value="Suspicious Activity">Suspicious Activity</option>
+                    <option value="General Advice">General Advice</option>
+                </select>
+            </div>
+
+            <div id="alertsList" class="alerts-container">
+                <!-- Alerts will be dynamically rendered here via JavaScript -->
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SafeNeighbor Project | Internet Programming Assessment</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
